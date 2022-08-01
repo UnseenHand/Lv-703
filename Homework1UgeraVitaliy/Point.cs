@@ -1,17 +1,28 @@
 ﻿using System;
-namespace Homework10
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
+
+namespace Homework12
 {
-    public class Point
+    [Serializable]
+    [DataContract]
+    public struct Point
     {
         private int x;
         private int y;
+        [XmlAttribute]
+        [DataMember]
         public int X
         {
             get { return x; }
+            set { x = value; }
         }
+        [XmlAttribute]
+        [DataMember]
         public int Y
         {
             get { return y; }
+            set { y = value; }
         }
         public Point(int x, int y)
         {

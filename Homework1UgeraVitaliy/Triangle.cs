@@ -1,23 +1,40 @@
 ﻿using System;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
-namespace Homework10
+namespace Homework12
 {
+    [Serializable]
+    [DataContract]
     public class Triangle
     {
         private Point a;
         private Point b;
         private Point c;
+        [XmlElement(ElementName = "Point_A")]
+        [DataMember(Name = "Point_A")]
         public Point A
         {
             get { return a; }
+            set { a = value; }
         }
+        [XmlElement(ElementName = "Point_B")]
+        [DataMember(Name = "Point_B")]
         public Point B
         {
             get { return b; }
+            set { b = value; }
         }
+        [XmlElement(ElementName = "Point_C")]
+        [DataMember(Name = "Point_C")]
         public Point C
         {
             get { return c; }
+            set { c = value; }
+        }
+        public Triangle()
+        {
+
         }
         public Triangle(Point a, Point b, Point c)
         {
